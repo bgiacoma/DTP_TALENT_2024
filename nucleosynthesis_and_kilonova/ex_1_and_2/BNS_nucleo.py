@@ -12,8 +12,8 @@ import matplotlib.pyplot as plt
 sim = 'SFHo_M11461635_M0_LK_SR'
 
 # choose one of the two criteria
-#crit_unbound = 'geo'
-crit_unbound = 'bern'
+crit_unbound = 'geo'
+#crit_unbound = 'bern'
 #===================================================
 
 print('I am considering the following simulation:', sim)
@@ -51,8 +51,8 @@ print(costh_array)
 
 #===================================================
 # here I am selecting one polar angle
-ith=25
-print('I am considering the polar angle:',np.arccos(costh_array[ith]))
+ith=12
+print('I am considering the polar angle:',np.arccos(costh_array[ith])*180/3.14159)
 
 # plotting part
 nnrows = 1

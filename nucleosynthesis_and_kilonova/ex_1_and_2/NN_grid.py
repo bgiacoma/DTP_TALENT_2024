@@ -7,11 +7,11 @@ from matplotlib import ticker, cm
 
 # select one option
 #==================================================
-tau_fix = False
-tau     = 10.          # tau in ms
+tau_fix = True
+tau     =10.          # tau in ms
 
-s_fix   = True
-s       = 200.          # s in kb/baryon
+s_fix   = False
+s       = 5.          # s in kb/baryon
 
 ye_fix  = False         
 ye      = 0.1          # ye
@@ -54,7 +54,7 @@ testA = np.array([A,]*(nA1*nA2*nA3)).reshape(nA1,nA2,nA3,nA4)
 
 #==================================================================
 # Example: prepare Hydrogen abundances
-Zspec = 1
+Zspec = 2
 tmpZ = np.where( testZ==Zspec, YZ_tau_s_ye, 0.)
 print(np.shape(tmpZ))
 #==================================================================
@@ -88,7 +88,7 @@ fig, ax = plt.subplots(nrows=nnrows, ncols=nncols,figsize=(4,3),sharex=True,shar
 
 # set the plot levels
 levels = [1.e-4,1.e-3,1.e-2,1.e-1]#np.arange(-5, 0.25, 1)
-levels1 = np.logspace(np.log10(1.e-5), np.log10(1.e-1),1000)
+levels1 = np.logspace(np.log10(1.e-5), np.log10(1.e-2),1000)
 
 # color-coded abundances
 cs = ax.contourf(X, Y, Z,locator=ticker.LogLocator(),levels=levels1,extend='both',cmap='viridis')
